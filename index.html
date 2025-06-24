@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+      <link href="./src/output.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body> 
+       <div class="welcomePage flex flex-col items-center justify-center min-h-screen  ">
+        <div class="welcomeContent flex flex-col items-center justify-center  w-full  min-h-screen">
+            <div class="weatherIcon mb-8 w-2xs h-2xs " >
+                <img src="./assests/partly-cloudy.png" class="h-full w-full">
+            </div>
+            <div class="welcomeText flex flex-col items-center">
+                <span class="text-6xl font-bold text-white">weather</span>
+                <span class="forecastText text-5xl  text-amber-400">ForeCasts</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainPage flex flex-col items-center justify-center py-8  ">
+        <div class="mainContent  p-6 flex flex-col items-center ">
+            <!-- <div class="searchBar flex w-full mb-6">
+                <input type="text" placeholder="Search for a city..." class="flex-1 px-4 py-2 rounded-l-md border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600">Search</button>
+            </div> -->
+            <div class="weatherMainIcon flex justify-center items-center mb-5 w-40 h-40 ">
+                <img src="./assests/partly-cloudy.png" class="h-full w-full">
+            </div>
+            <div class="currentInfo text-center mb-4 ">
+                <p class="currentTemp text-5xl font-bold text-white">19°</p>
+                <p class="text-gray-100 font-medium text-1xl">Precipitations</p>
+                <p class="temp text-white-700 flex justify-between gap-2.5">Max: <span class="higherTemp font-semibold">19°</span>  Min: <span class="lowestTemp font-semibold">19°</span></p>
+            </div>
+            <div class="homeIcon mt-2 w-60 h-60">
+                <img src="./assests/new-house.png" class="w-full h-full" alt="">
+            </div>
+        </div>
+        <div class="weatherInfo w-full max-w-2xl mt-8  rounded-t-3xl shadow  ">
+            <div class="dateDay flex items-center justify-between w-full mb-4 border-b-1 border-gray-400" style="padding: 10px;">
+                <span class="day text-lg">Wednesday</span>
+                <span class="dateMonth flex items-center gap-1">
+                    <span class="month">May</span>
+                    <span class="date">12</span>
+                </span>
+            </div>
+            <div class="forcasting w-full flex flex-col gap-8">
+                <div class="hourlyForcast w-full flex flex-col    gap-6 p-4  ">
+                    <h2 class="font-semibold text-3xl  text-start" style="padding-left: 1rem;  margin: 10px 0px;">Hourly Forecast</h2>
+                    <div class="space-y-2n flex overflow-x-auto scrollbar-hide">
+                        <div class="hourly p-6  flex flex-col items-center justify-center gap-3" style="padding:10px;">
+                           
+                            <span class="temp ">18°</span>
+                            <img class="icon" src="./assests/cloud.png" alt="Sunny" width="48" height="48">
+                             <span class="hour w-16">08:00</span>
+                        </div>
+                        <div class="hourly p-6  flex flex-col items-center justify-center gap-3" style="padding:10px;">
+                           
+                            <span class="temp ">18°</span>
+                            <img class="icon" src="./assests/cloud.png" alt="Sunny" width="48" height="48">
+                             <span class="hour w-16">08:00</span>
+                        </div>
+                                             <div class="hourly p-6  flex flex-col items-center justify-center gap-3" style="padding:10px;">
+                           
+                            <span class="temp ">18°</span>
+                            <img class="icon" src="./assests/cloud.png" alt="Sunny" width="48" height="48">
+                             <span class="hour w-16">08:00</span>
+                        </div>
+                        <div class="hourly p-6  flex flex-col items-center justify-center gap-3" style="padding:10px;">
+                           
+                            <span class="temp ">18°</span>
+                            <img class="icon" src="./assests/cloud.png" alt="Sunny" width="48" height="48">
+                             <span class="hour w-16">08:00</span>
+                        </div>
+                         <div class="hourly p-6  flex flex-col items-center justify-center gap-3" style="padding:10px;">
+                           
+                            <span class="temp ">18°</span>
+                            <img class="icon" src="./assests/cloud.png" alt="Sunny" width="48" height="48">
+                             <span class="hour w-16">08:00</span>
+                        </div>
+                        <div class="hourly p-6  flex flex-col items-center justify-center gap-3" style="padding:10px;">
+                           
+                            <span class="temp ">18°</span>
+                            <img class="icon" src="./assests/cloud.png" alt="Sunny" width="48" height="48">
+                             <span class="hour w-16">08:00</span>
+                        </div>
+                                             <div class="hourly p-6  flex flex-col items-center justify-center gap-3" style="padding:10px;">
+                           
+                            <span class="temp ">18°</span>
+                            <img class="icon" src="./assests/cloud.png" alt="Sunny" width="48" height="48">
+                             <span class="hour w-16">08:00</span>
+                        </div>
+                        <div class="hourly p-6  flex flex-col items-center justify-center gap-3" style="padding:10px;">
+                           
+                            <span class="temp ">18°</span>
+                            <img class="icon" src="./assests/cloud.png" alt="Sunny" width="48" height="48">
+                             <span class="hour w-16">08:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weekForcast w-full flex flex-col  mt-6 ">
+                    <h2 class="text-2xl font-semibold  pl-4" style="margin-bottom: 16px;">Weekly Forecast</h2>
+                    <div class=" flex  justify-center gap-3.5 overflow-x-auto scrollbar-hide" style="margin-bottom: 15px;">
+                        <div class="daily flex flex-col items-center justify-center  ">
+                            <span class="temp text-blue-200 text-lg font-semibold">22°</span>
+                            <img class="icon" src="./assests/rainy.png" alt="Sunny" width="48" height="48">
+                             <span class="weekday w-16 text-lg font-medium text-gray-100">Mon</span>
+
+                        </div>
+                        <div class="daily flex flex-col items-center justify-center  ">
+                            <span class="temp text-blue-200 text-lg font-semibold">22°</span>
+                            <img class="icon" src="./assests/rainy.png" alt="Sunny" width="48" height="48">
+                             <span class="weekday w-16 text-lg font-medium text-gray-100">Mon</span>
+
+                        </div>
+                                             <div class="daily flex flex-col items-center justify-center  ">
+                            <span class="temp text-blue-200 text-lg font-semibold">22°</span>
+                            <img class="icon" src="./assests/rainy.png" alt="Sunny" width="48" height="48">
+                             <span class="weekday w-16 text-lg font-medium text-gray-100">Mon</span>
+
+                        </div>
+                        <div class="daily flex flex-col items-center justify-center  ">
+                            <span class="temp text-blue-200 text-lg font-semibold">22°</span>
+                            <img class="icon" src="./assests/rainy.png" alt="Sunny" width="48" height="48">
+                             <span class="weekday w-16 text-lg font-medium text-gray-100">Mon</span>
+
+                        </div>
+                        <div class="daily flex flex-col items-center justify-center  ">
+                            <span class="temp text-blue-200 text-lg font-semibold">22°</span>
+                            <img class="icon" src="./assests/rainy.png" alt="Sunny" width="48" height="48">
+                             <span class="weekday w-16 text-lg font-medium text-gray-100">Mon</span>
+
+                        </div>
+                                                <div class="daily flex flex-col items-center justify-center  ">
+                            <span class="temp text-blue-200 text-lg font-semibold">22°</span>
+                            <img class="icon" src="./assests/rainy.png" alt="Sunny" width="48" height="48">
+                             <span class="weekday w-16 text-lg font-medium text-gray-100">Mon</span>
+
+                        </div>
+                                                <div class="daily flex flex-col items-center justify-center  ">
+                            <span class="temp text-blue-200 text-lg font-semibold">22°</span>
+                            <img class="icon" src="./assests/rainy.png" alt="Sunny" width="48" height="48">
+                             <span class="weekday w-16 text-lg font-medium text-gray-100">Mon</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="airPollutionPage flex flex-col items-center py-10 min-h-[60vh]" style="margin-top: 2rem;">
+    <div class="airPollutionContent w-full max-w-md rounded-2xl shadow-2xl  bg-white transform transition-all hover:shadow-3xl" style="margin: 20px; padding: 24px;">
+      <div class="flex items-center gap-3 text-xl font-semibold  " style="margin-bottom:20px;"  >
+<span class="flex items-center justify-center bg-blue-100 rounded-full" style="padding:4px 8px;"><i class="ri-crosshair-2-fill text-blue-600"></i></span>
+        <h2 class="text-2xl font-bold">Air Quality</h2>
+      </div>
+      <div class="pollutionLevel flex items-center gap-6 " style="margin-bottom:16px;"  >
+        <span id="level" class="level font-bold text-lg rounded-2xl  shadow-sm" style="padding: 4px 16px;">Good</span>
+        <span id="index" class="index  font-medium text-lg">AQI: 35</span>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-3 " style="margin-bottom:20px;"  >
+        <div id="aqi-progress" class="bg-green-500 h-3 rounded-full transition-all duration-300" style="width: 7%;"></div> <!-- 35/500 = 7% -->
+      </div>
+      <p class="mt-4 text-sm text-gray-700">
+        <span id="air-quality-msg" class="inline-block font-medium  rounded-full shadow-md bg-green-100 text-green-700" style="padding:8px 16px ; ">
+          🟢 Air quality is good. It’s a great day to be outside and breathe easy!
+        </span>
+      </p>
+      <p class="mt-2 text-xs text-gray-500">Last updated: 11:51 AM IST, Tuesday, June 24, 2025</p>
+    </div>
+  </div>
+
+<footer class="w-full bg-gray-900 text-gray-200 py-6 mt-8" style="margin-top: 32px; padding: 24px 0px;">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6" style="padding: 0px 24px;">
+        <div class="flex items-center gap-2 mb-3 md:mb-0">
+            <img src="./assests/partly-cloudy.png" alt="Weather Logo" class="w-8 h-8">
+            <span class="font-bold text-lg">Weather ForeCasts</span>
+        </div>
+        <div class="text-sm text-gray-400">
+            &copy; 2024 WeatherWeb. All rights reserved.
+        </div>
+        <div class="flex gap-4 mt-3 md:mt-0" style="margin-top: 12px;">
+            <a href="#" class="hover:text-amber-400"><i class="ri-github-fill text-xl"></i></a>
+            <a href="#" class="hover:text-amber-400"><i class="ri-twitter-x-line text-xl"></i></a>
+            <a href="#" class="hover:text-amber-400"><i class="ri-mail-line text-xl"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+    <script src="./src/script.js"></script>
+</html>

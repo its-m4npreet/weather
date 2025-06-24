@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+
+
+:root {
+  /* Background Gradient Colors */
+  --bg-gradient-top: #9A53FF;     /* Light Violet */
+  --bg-gradient-bottom: #3A0CA3;  /* Deep Purple */
+
+  /* Text Colors */
+  --text-white: #FFFFFF;
+  --text-dark: #1E1E1E;
+  --text-purple: #3A0CA3;
+  --text-yellow: #FFD233;
+
+  /* Button Colors */
+  --button-yellow: #FFD233;
+  --button-text: #3A0CA3;
+
+  /* Forecast Card Colors */
+  --card-bg: #5A3FC0;
+  --card-bg-light: #7452DF;
+
+  /* Info Boxes (e.g., Air Quality) */
+  --info-box-bg: #5E3BCF;
+  --info-box-text: #FFC0CB;
+
+  /* Misc */
+  --sunrise-color: #FFD700;
+  --uv-index-bg: #7B4FE2;
+  --health-risk-bg: #B347D9;
+}
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+  background: linear-gradient(135deg, var(--bg-gradient-top), var(--bg-gradient-bottom));
+  color: var(--text-white);
+  font-family: 'Poppins', sans-serif;
+}
+
+.weatherInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background:linear-gradient(135deg, var(--bg-gradient-top), var(--bg-gradient-bottom));
+border: 2px solid var(--card-bg-light);
+border-radius: 18px;
+box-shadow: 0 4px 24px rgba(58, 12, 163, 0.15);
+}
+
+.scrollbar-hide {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+display: none;             /* Chrome, Safari, Opera */
+}
+
+.airPollutionContent {
+background: linear-gradient(135deg, var(--card-bg), var(--card-bg-light), var(--uv-index-bg));
+border: 2px solid var(--uv-index-bg);
+border-radius: 14px;
+padding: 1rem;
+
+}
