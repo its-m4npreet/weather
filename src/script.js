@@ -20,13 +20,53 @@
         };
 
         // AQI level mapping (based on European AQI)
-              function getAqiLevel(aqi) {
-            if (aqi <= 20) return { level: 'Good', color: 'bg-green-100',textColor:'bg-green-500' , message: '🟢 Air quality is good. It’s a great day to be outside!', width: (aqi / 100) * 100 };
-            if (aqi <= 40) return { level: 'Fair', color: 'bg-yellow-100', textColor:'bg-yellow-500' , message: '🟡 Air quality is acceptable. Sensitive groups may notice effects.', width: (aqi / 100) * 100};
-            if (aqi <= 60) return { level: 'Moderate', color: 'bg-orange-100', textColor:'bg-orange-500' , message: '🟠 Air quality is moderate. Unhealthy for sensitive groups.', width: (aqi / 100) * 100, textColor:'bg-orange-500' };
-            if (aqi <= 80) return { level: 'Poor', color: 'bg-red-100', textColor:'bg-orange-500' , textColor:'bg-red-500', message: '🔴 Air quality is poor. Health effects may occur.', width: (aqi / 100) * 100 , textColor:'bg-red-500'};
-            return { level: 'Very Poor', color: 'bg-purple-100', textColor:'bg-puple-500' , message: '🟣 Air quality is very poor. Serious health effects possible.', width: (aqi / 100) * 100 };
-        }
+   function getAqiLevel(aqi) {
+    const clampedWidth = Math.min(100, Math.max(0, (aqi / 500) * 100));
+    if (aqi <= 50) {
+        return {
+            level: 'Good',
+            color: 'bg-green-100',
+            textColor: 'bg-green-500',
+            message: '🟢 Air quality is good. It’s a great day to be outside!',
+            width: clampedWidth
+        };
+    }
+    if (aqi <= 100) {
+        return {
+            level: 'Fair',
+            color: 'bg-yellow-100',
+            textColor: 'bg-yellow-500',
+            message: '🟡 Air quality is acceptable. Sensitive groups may notice effects.',
+            width: clampedWidth
+        };
+    }
+    if (aqi <= 150) {
+        return {
+            level: 'Moderate',
+            color: 'bg-orange-100',
+            textColor: 'bg-orange-500',
+            message: '🟠 Air quality is moderate. Unhealthy for sensitive groups.',
+            width: clampedWidth
+        };
+    }
+    if (aqi <= 200) {
+        return {
+            level: 'Poor',
+            color: 'bg-red-100',
+            textColor: 'bg-red-500',
+            message: '🔴 Air quality is poor. Health effects may occur.',
+            width: clampedWidth
+        };
+    }
+    return {
+        level: 'Very Poor',
+        color: 'bg-purple-100',
+        textColor: 'bg-purple-500',
+        message: '🟣 Air quality is very poor. Serious health effects possible.',
+        width: clampedWidth
+    };
+}
+
 
 
         // Fetch coordinates for a city
