@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link href="./src/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- Add AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Add AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 
-<body> 
+<body>
 
 
-    <div id="welcome-page" class="welcomePage flex flex-col items-center justify-center min-h-screen">
-        <div class="welcomeContent flex flex-col items-center justify-center w-full min-h-screen" data-aos="fade-up" data-aos-duration="1200">
-            <div class="weatherIcon mb-8 w-24 h-24" data-aos="zoom-in" data-aos-delay="200">                <img src="./assests/partly-cloudy.png" class="h-full w-full">
+    <div id="welcome-page" class="welcomePage flex flex-col items-center justify-center h-screen">
+        <div class="welcomeContent flex flex-col items-center justify-center w-full min-h-screen" data-aos="fade-up"
+            data-aos-duration="1200">
+            <div class="weatherIcon mb-8 w-24 h-24" data-aos="zoom-in" data-aos-delay="200"> <img
+                    src="./assests/partly-cloudy.png" class="h-full w-full">
             </div>
             <div class="welcomeText flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
                 <span class="text-6xl font-bold text-white">Weather</span>
@@ -25,115 +30,123 @@
         </div>
     </div>
 
-<main id="main-content" class="overflow-hidden">
-    <div id="main-content" class="mainPage flex flex-col items-center justify-center py-8 ">
-        <div class="mainContent p-6 flex flex-col items-center">
-<div class="searchBar w-full min-w-4xl mb-8 px-4  flex flex-col items-center justify-center ">
-<div id="searchBtn" class="w-full max-w-md " style="margin-bottom: 24px; padding: 8px;">
-  <div class="flex items-center w-full bg-white border border-purple-400 rounded-full shadow-sm px-4 py-2">
-    <input 
-      type="text" 
-      id="cityInput" 
-    placeholder="Find your city's temperature, weather, etc." 
-      class="flex-1 bg-transparent focus:outline-none placeholder-gray-500 text-sm "
-    />
-    <svg style="  margin-right: 1rem;"     
-     xmlns="http://www.w3.org/2000/svg" 
-      class="h-5 w-5 text-gray-500" 
-      fill="none" 
-      viewBox="0 0 24 24" 
-      stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-        d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
-    </svg>
-  </div>
-</div>
-
-
-
-            <div class="weatherMainIcon flex justify-center items-center mb-5 w-40 h-40">
-                <img src="./assests/partly-cloudy.png" class="h-full w-full">
-            </div>
-            <div class="currentInfo text-center mb-4">
-                <p class="currentTemp text-5xl font-bold text-white">23°</p>
-                <p class="text-gray-100 font-medium text-xl">Precipitation</p>
-                <p class="temp text-white-700 flex justify-between gap-2.5">Max: <span class="higherTemp font-semibold">23°</span> Min: <span class="lowestTemp font-semibold">23°</span></p>
-            </div>
-            <div class="homeIcon mt-2 w-60 h-60">
-                <img src="./assests/new-house.png" class="w-full h-full" alt="House Icon">
-            </div>
-        </div>
-        <div class="weatherInfo w-full max-w-2xl mt-8 rounded-t-3xl shadow bg-white">
-            <div class="dateDay flex items-center justify-between w-full mb-4 border-b-1 border-gray-400" style="padding: 10px;">
-                <span class="day text-lg">Wednesday</span>
-                <span class="dateMonth flex items-center gap-1">
-                    <span class="month-text">June</span>
-                    <span class="date">25</span>
-                </span>
-            </div>
-            <div class="forcasting w-full flex flex-col gap-8">
-                <div class="hourlyForcast w-full flex flex-col gap-6 p-4">
-                    <h2 class="font-semibold text-3xl text-start" style="padding-left: 1rem; margin: 10px 0px;">Hourly Forecast</h2>
-                    <div class="space-y-2n flex overflow-x-auto scrollbar-hide">
-                        <!-- Hourly forecast items will be added dynamically -->
+    <main id="main-content" class="overflow-hidden">
+        <div id="main-content" class="mainPage flex flex-col items-center justify-center py-8 ">
+            <div class="mainContent p-6 flex flex-col items-center">
+                <div class="searchBar w-full min-w-4xl mb-8 px-4  flex flex-col items-center justify-center ">
+                    <div id="searchBtn" class="w-full max-w-md " style="margin-bottom: 24px; padding: 8px;">
+                        <div
+                            class="flex items-center w-full bg-white border border-purple-400 rounded-full shadow-sm " style="margin: 10px;">
+                            <input type="text" id="cityInput" placeholder="Find your city's temperature, weather, etc."
+                                class="flex-1 bg-transparent focus:outline-none placeholder-gray-500 text-sm " />
+                            <svg style="  margin-right: 1rem;" xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="weatherMainIcon flex justify-center items-center mb-5 w-40 h-40">
+                        <img src="./assests/partly-cloudy.png" class="h-full w-full">
+                    </div>
+                    <div class="currentInfo text-center mb-4">
+                        <p class="currentTemp text-5xl font-bold text-white">23°</p>
+                        <p class="text-gray-100 font-medium text-xl">Precipitation</p>
+                        <p class="temp text-white-700 flex justify-between gap-2.5">Max: <span
+                                class="higherTemp font-semibold">23°</span> Min: <span
+                                class="lowestTemp font-semibold">23°</span></p>
+                    </div>
+                    <div class="homeIcon mt-2 w-60 h-60">
+                        <img src="./assests/new-house.png" class="w-full h-full" alt="House Icon">
                     </div>
                 </div>
-                <div class="weekForcast w-full flex flex-col mt-6">
-                    <h2 class="text-2xl font-semibold pl-4" style="margin-bottom: 16px;">Weekly Forecast</h2>
-                    <div class="flex justify-center gap-3.5 overflow-x-auto scrollbar-hide" style="margin-bottom: 15px;">
-                        <!-- Weekly forecast items will be added dynamically -->
+                <div class="weatherInfo w-full max-w-2xl mt-8 rounded-t-3xl shadow bg-white">
+                    <div class="dateDay flex items-center justify-between w-full mb-4 border-b-1 border-gray-400"
+                        style="padding: 10px;">
+                        <span class="day text-lg">Wednesday</span>
+                        <span class="dateMonth flex items-center gap-1">
+                            <span class="month-text">June</span>
+                            <span class="date">25</span>
+                        </span>
+                    </div>
+                    <div class="forcasting w-full flex flex-col gap-8 justify-center">
+                        <div class="hourlyForcast w-full flex flex-col gap-6 p-4">
+                            <h2 class="font-semibold text-3xl text-start" style="padding-left: 1rem; margin: 10px 0px;">
+                                Hourly Forecast</h2>
+                            <div class="space-y-2n flex overflow-x-auto scrollbar-hide">
+                                <!-- Hourly forecast items will be added dynamically -->
+                            </div>
+                        </div>
+                        <div class="weekForcast w-full flex flex-col mt-6">
+                            <h2 class="text-2xl font-semibold pl-4" style="margin-bottom: 16px;">Weekly Forecast</h2>
+                            <div class="flex gap-3.5 overflow-x-auto scrollbar-hide"
+                                style="margin-bottom: 15px;">
+                                <!-- Weekly forecast items will be added dynamically -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            </div>
 
-    <div class="airPollutionPage flex flex-col py-10 items-center justify-center min-h-[60vh] w-auto" style="margin-top: 2rem;">
-        <div class="airPollutionContent w-full max-w-md rounded-2xl shadow-2xl bg-white transform transition-all hover:shadow-3xl" style="margin: 20px; padding: 24px;">
-            <div class="flex items-center gap-3 text-xl font-semibold" style="margin-bottom:20px;">
-                <span class="flex items-center justify-center bg-blue-100 rounded-full" style="padding:4px 8px;"><i class="ri-crosshair-2-fill text-blue-600"></i></span>
-                <h2 class="text-2xl font-bold">Air Quality</h2>
-            </div>
-            <div class="pollutionLevel flex items-center gap-6" style="margin-bottom:16px;">
-                <span id="air-quality-level" class="level font-semibold text-lg rounded-full bg-green-50 text-green-600" style="padding: 8px 16px;">Good</span>
-                <span id="aqi-index" class="index font-medium text-lg">AQI: 35</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-3" style="margin-bottom:20px;">
-                <div id="aqi-progress" class="bg-green-500 h-3 rounded-full transition-all duration-300 " style="width: 7%;"></div>
-            </div>
-            <p class="mt-4 text-sm text-gray-700 flex justify-center items-center" >
-                <span id="air-quality-msg" class="inline-block font-medium rounded-full shadow-md bg-green-100 text-green-700" style="padding:8px 16px;">
-                    🟢 Air quality is good. It’s a great day to be outside and breathe easy!
-                </span>
-            </p>
-            <p class="mt-2 text-xs text-gray-100 flex justify-center items-center" id="last-updated" style="margin-top: 8px;">Last updated: 09:53 PM IST, Wednesday, June 25, 2025</p>
-        </div>
+            <div class="airPollutionPage flex flex-col py-10 items-center justify-center min-h-[60vh] w-auto"
+                style="margin-top: 2rem;">
+                <div class="airPollutionContent w-full max-w-md rounded-2xl shadow-2xl  transform transition-all hover:shadow-3xl"
+                    style="margin: 20px; padding: 24px;">
+                    <div class="flex items-center gap-3 text-xl font-semibold" style="margin-bottom:20px;">
+                        <span class="flex items-center justify-center bg-blue-100 rounded-full"
+                            style="padding:4px 8px;"><i class="ri-crosshair-2-fill text-blue-600"></i></span>
+                        <h2 class="text-2xl font-bold">Air Quality</h2>
+                    </div>
+                    <div class="pollutionLevel flex items-center gap-6" style="margin-bottom:16px;">
+                        <span id="air-quality-level"
+                            class="level font-semibold text-lg rounded-full bg-green-50 text-green-600"
+                            style="padding: 8px 16px;">Good</span>
+                        <span id="aqi-index" class="index font-medium text-lg">AQI: 35</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3" style="margin-bottom:20px;">
+                        <div id="aqi-progress" class="bg-green-500 h-3 rounded-full transition-all duration-300 "
+                            style="width: 7%;"></div>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-700 flex justify-center items-center">
+                        <span id="air-quality-msg"
+                            class="inline-block font-medium rounded-full shadow-md bg-green-100 text-green-700"
+                            style="padding:8px 16px;">
+                            🟢 Air quality is good. It’s a great day to be outside and breathe easy!
+                        </span>
+                    </p>
+                    <p class="mt-2 text-xs text-gray-100 flex justify-center items-center" id="last-updated"
+                        style="margin-top: 8px;">Last updated: 09:53 PM IST, Wednesday, June 25, 2025</p>
+                </div>
+                </div>
 
-    <footer class="w-full bg-gray-900 text-gray-200 py-6 mt-8" style="margin-top: 32px; padding: 24px 0px;">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6" style="padding: 0px 24px;">
-            <div class="flex items-center gap-2 mb-3 md:mb-0">
-                <img src="./assests/partly-cloudy.png" alt="Weather Logo" class="w-8 h-8">
-                <span class="font-bold text-lg">Weather ForeCasts</span>
-            </div>
-            <div class="text-sm text-gray-400">
-                © 2024 WeatherWeb. All rights reserved.
-            </div>
-            <div class="flex gap-4 mt-3 md:mt-0" style="margin-top: 12px;">
-                <a href="#" class="hover:text-amber-400"><i class="ri-github-fill text-xl"></i></a>
-                <a href="#" class="hover:text-amber-400"><i class="ri-twitter-x-line text-xl"></i></a>
-                <a href="#" class="hover:text-amber-400"><i class="ri-mail-line text-xl"></i></a>
-            </div>
-        </div>
-    </footer>
+                <footer class="w-full bg-gray-900 text-gray-200 py-6 mt-8" style="margin-top: 32px; padding: 24px 0px;">
+                    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6"
+                        style="padding: 0px 24px;">
+                        <div class="flex items-center gap-2 mb-3 md:mb-0">
+                            <img src="./assests/partly-cloudy.png" alt="Weather Logo" class="w-8 h-8">
+                            <span class="font-bold text-lg">Weather ForeCasts</span>
+                        </div>
+                        <div class="text-sm text-gray-400">
+                            © 2024 WeatherWeb. All rights reserved.
+                        </div>
+                        <div class="flex gap-4 mt-3 md:mt-0" style="margin-top: 12px;">
+                            <a href="#" class="hover:text-amber-400"><i class="ri-github-fill text-xl"></i></a>
+                            <a href="#" class="hover:text-amber-400"><i class="ri-twitter-x-line text-xl"></i></a>
+                            <a href="#" class="hover:text-amber-400"><i class="ri-mail-line text-xl"></i></a>
+                        </div>
+                    </div>
+                </footer>
     </main>
 
 </body>
-    <!-- Add AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init();
-      AOS.refresh();
-    </script>
+<!-- Add AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+    AOS.refresh();
+</script>
 
 <script src="./src/script.js"></script>
+
 </html>
