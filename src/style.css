@@ -100,7 +100,7 @@ body {
 }
 
 #searchBtn {
-    /* width: 100%; */
+    width: 100%;
     padding: 8px;
 }
 
@@ -114,7 +114,6 @@ body {
 .weatherMainIcon {
     width: 120px;
     height: 120px;
-    margin-bottom: 16px;
 }
 
 .weatherMainIcon img {

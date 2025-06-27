@@ -211,7 +211,7 @@
         
 
         // Search bar event listener
-        document.querySelector('#searchBtn').addEventListener('click', async () => {
+        document.querySelector('#searchBtn svg').addEventListener('click', async () => {
             const city = document.querySelector('#cityInput').value.trim();
             if (!city) {
                 alert('Please enter a city name.');

@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <meta name="description" content="Check your local weather forecast with real-time updates and air quality information.">
+    <meta name="keywords" content="weather, forecast, air quality, temperature">
+    <meta name="author" content="WeatherWeb">
+    <title>Weather ForeCasts</title>
     <link href="./src/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Add AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
 </head>
-
-<body>
-
-
+<body class="bg-gray-900 min-h-screen font-sans">
     <div id="welcome-page" class="welcomePage flex flex-col items-center justify-center h-screen">
         <div class="welcomeContent flex flex-col items-center justify-center w-full min-h-screen" data-aos="fade-up"
             data-aos-duration="1200">
-            <div class="weatherIcon mb-8 w-24 h-24" data-aos="zoom-in" data-aos-delay="200"> <img
+            <div class="weatherIcon mb-8 w-58 h-58" data-aos="zoom-in" data-aos-delay="200"> <img
                     src="./assests/partly-cloudy.png" class="h-full w-full">
             </div>
             <div class="welcomeText flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
@@ -28,68 +23,64 @@
                 <span class="forecastText text-5xl text-amber-400">ForeCasts</span>
             </div>
         </div>
-    </div>
+    </div> 
+
 
     <main id="main-content" class="overflow-hidden">
-        <div id="main-content" class="mainPage flex flex-col items-center justify-center py-8 ">
-            <div class="mainContent p-6 flex flex-col items-center">
-                <div class="searchBar w-full min-w-4xl mb-8 px-4  flex flex-col items-center justify-center ">
-                    <div id="searchBtn"  style="margin-bottom: 24px; padding: 8px;">
-                        <div
-                            class="flex items-center  bg-white border border-purple-400 rounded-full shadow-sm " style="margin: 10px;">
-                            <input type="text" id="cityInput" placeholder="Find your city's temperature, weather, etc."
-                                class="flex-1 bg-transparent focus:outline-none placeholder-gray-500 text-sm " />
-                            <svg style="  margin-right: 1rem;" xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+        <div class="mainPage flex flex-col items-center justify-center py-8 px-4">
+            <div class="mainContent w-full max-w-4xl p-6 flex flex-col items-center">
+                <div class="searchBar  flex flex-col items-center justify-center w-full max-w-2xl ">
+                    <div id="searchBtn" class="flex justify-center">
+                        <div class="flex items-center bg-white border border-purple-400 rounded-full shadow-sm w-full max-w-md p-2">
+                            <input type="text" id="cityInput" placeholder="Find your city's temperature, weather, etc." class="flex-1 bg-transparent focus:outline-none placeholder-gray-500 text-sm px-4 py-2" aria-label="Search city weather" />
+                            <svg class="h-5 w-5 text-gray-500 " style="margin-right: 12px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
                             </svg>
                         </div>
                     </div>
-                    <div class="weatherMainIcon flex justify-center items-center mb-5 w-40 h-40">
-                        <img src="./assests/partly-cloudy.png" class="h-full w-full">
+                    <div class="weatherMainIcon flex justify-center items-center mb-5 w-32 h-32 md:w-40 md:h-40">
+                        <img src="./assests/partly-cloudy.png" class="h-full w-full object-contain" alt="Current Weather">
                     </div>
-                    <div class="currentInfo text-center mb-4">
-                        <p class="currentTemp text-5xl font-bold text-white">23°</p>
-                        <p class="text-gray-100 font-medium text-xl">Precipitation</p>
-                        <p class="temp text-white-700 flex justify-between gap-2.5">Max: <span
-                                class="higherTemp font-semibold">23°</span> Min: <span
-                                class="lowestTemp font-semibold">23°</span></p>
+                    <div class="currentInfo text-center mb-6">
+                        <p class="currentTemp text-4xl md:text-5xl font-bold text-white">23°</p>
+                        <p class="text-gray-100 font-medium text-lg md:text-xl mt-2">Precipitation</p>
+                        <p class="temp text-white flex justify-center gap-4 mt-2">
+                            <span>Max: <span class="higherTemp font-semibold">23°</span></span>
+                            <span>Min: <span class="lowestTemp font-semibold">23°</span></span>
+                        </p>
                     </div>
-                    <div class="homeIcon mt-2 w-60 h-60">
-                        <img src="./assests/new-house.png" class="w-full h-full" alt="House Icon">
+                    <div class="homeIcon mt-4 w-48 h-48 ">
+                        <img src="./assests/new-house.png" class="w-full h-full object-contain" alt="House Icon">
                     </div>
                 </div>
-                <div class="weatherInfo w-full max-w-2xl mt-8 rounded-t-3xl shadow bg-white">
-                    <div class="dateDay flex items-center justify-between w-full mb-4 border-b-1 border-gray-400"
-                        style="padding: 10px;">
-                        <span class="day text-lg">Wednesday</span>
-                        <span class="dateMonth flex items-center gap-1">
+                <div class="weatherInfo w-full max-w-2xl mt-8 rounded-t-3xl shadow-lg bg-white p-6">
+                    <div class="dateDay flex items-center justify-between w-full mb-4 pb-4 border-b border-gray-300">
+                        <span class="day text-lg font-medium">Wednesday</span>
+                        <span class="dateMonth flex items-center gap-2">
                             <span class="month-text">June</span>
                             <span class="date">25</span>
                         </span>
                     </div>
-                    <div class="forcasting w-full flex flex-col gap-8 justify-center">
-                        <div class="hourlyForcast w-full flex flex-col gap-6 p-4">
+                    <div class="forcasting w-full flex flex-col gap-6">
+                       <div class="hourlyForcast w-full flex flex-col gap-6 p-4">
                             <h2 class="font-semibold text-3xl text-start" style="padding-left: 1rem; margin: 10px 0px;">
                                 Hourly Forecast</h2>
                             <div class="space-y-2n flex overflow-x-auto scrollbar-hide">
                                 <!-- Hourly forecast items will be added dynamically -->
                             </div>
                         </div>
-                        <div class="weekForcast w-full flex flex-col mt-6">
-                            <h2 class="text-2xl font-semibold pl-4" style="margin-bottom: 16px;">Weekly Forecast</h2>
-                            <div class="flex gap-3.5 overflow-x-auto scrollbar-hide"
-                                style="margin-bottom: 15px;">
+                        <div class="weekForcast w-full">
+                            <h2 class="text-xl md:text-2xl font-semibold pl-4 mb-4">Weekly Forecast</h2>
+                            <div class="flex gap-4 overflow-x-auto scrollbar-hide pb-4">
                                 <!-- Weekly forecast items will be added dynamically -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
 
-            <div class="airPollutionPage flex flex-col py-10 items-center justify-center min-h-[60vh] w-auto"
+        <div class="airPollutionPage flex flex-col py-10 items-center justify-center min-h-[60vh] w-auto"
                 style="margin-top: 2rem;">
                 <div class="airPollutionContent w-full max-w-md rounded-2xl shadow-2xl  transform transition-all hover:shadow-3xl"
                     style="margin: 20px; padding: 24px;">
@@ -120,33 +111,31 @@
                 </div>
                 </div>
 
-                <footer class="w-full bg-gray-900 text-gray-200 py-6 mt-8" style="margin-top: 32px; padding: 24px 0px;">
-                    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6"
-                        style="padding: 0px 24px;">
-                        <div class="flex items-center gap-2 mb-3 md:mb-0">
-                            <img src="./assests/partly-cloudy.png" alt="Weather Logo" class="w-8 h-8">
-                            <span class="font-bold text-lg">Weather ForeCasts</span>
-                        </div>
-                        <div class="text-sm text-gray-400">
-                            © 2024 WeatherWeb. All rights reserved.
-                        </div>
-                        <div class="flex gap-4 mt-3 md:mt-0" style="margin-top: 12px;">
-                            <a href="#" class="hover:text-amber-400"><i class="ri-github-fill text-xl"></i></a>
-                            <a href="#" class="hover:text-amber-400"><i class="ri-twitter-x-line text-xl"></i></a>
-                            <a href="#" class="hover:text-amber-400"><i class="ri-mail-line text-xl"></i></a>
-                        </div>
-                    </div>
-                </footer>
+        <footer class="w-full bg-gray-900 text-gray-200 py-6">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <img src="./assests/partly-cloudy.png" alt="Weather Logo" class="w-8 h-8">
+                    <span class="font-bold text-lg">Weather ForeCasts</span>
+                </div>
+                <div class="text-sm text-gray-400">
+                    © 2024 WeatherWeb. All rights reserved.
+                </div>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-amber-400" aria-label="GitHub"><i class="ri-github-fill text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-400" aria-label="Twitter"><i class="ri-twitter-x-line text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-400" aria-label="Email"><i class="ri-mail-line text-xl"></i></a>
+                </div>
+            </div>
+        </footer>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 1200,
+        });
+    </script>
+    <script src="./src/script.js"></script>
 </body>
-<!-- Add AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-    AOS.init();
-    AOS.refresh();
-</script>
-
-<script src="./src/script.js"></script>
-
 </html>
