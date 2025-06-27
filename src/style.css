@@ -206,8 +206,8 @@ body {
 
 .airPollutionContent {
   width: 100%;
-  max-width: 350px;
-  margin: 16px auto;
+  max-width: 400px;
+  margin: 0px auto;
   padding: 16px;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);

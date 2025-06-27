@@ -26,7 +26,7 @@
     </div> 
 
 
-    <main id="main-content" class="overflow-hidden">
+    <main id="main-content" class="overflow-hidden flex flex-col items-center justify-center min-h-screen ">
         <div class="mainPage flex flex-col items-center justify-center py-8 px-4">
             <div class="mainContent w-full max-w-4xl p-6 flex flex-col items-center">
                 <div class="searchBar  flex flex-col items-center justify-center w-full max-w-2xl ">
@@ -53,7 +53,7 @@
                         <img src="./assests/new-house.png" class="w-full h-full object-contain" alt="House Icon">
                     </div>
                 </div>
-                <div class="weatherInfo w-full max-w-2xl rounded-t-3xl shadow-lg bg-white p-6">
+                <div class="weatherInfo w-full max-w-2xl rounded-t-3xl shadow-lg  p-6">
                     <div class="dateDay flex items-center justify-between w-full mb-4 pb-4 border-b border-gray-300">
                         <span class="day text-lg font-medium">Wednesday</span>
                         <span class="dateMonth flex items-center gap-2">
@@ -62,8 +62,8 @@
                         </span>
                     </div>
                     <div class="forcasting w-full flex flex-col gap-6">
-                       <div class="hourlyForcast w-full flex flex-col gap-6 p-4">
-                            <h2 class="font-semibold text-3xl text-start" style="padding-left: 1rem; margin: 10px 0px;">
+                       <div class="hourlyForcast w-full flex flex-col  p-4">
+                            <h2 class="font-semibold text-3xl text-start" style="padding-left: 1rem; margin-top: 10px;">
                                 Hourly Forecast</h2>
                             <div class="space-y-2n flex overflow-x-auto scrollbar-hide">
                                 <!-- Hourly forecast items will be added dynamically -->
@@ -80,10 +80,9 @@
             </div>
         </div>
 
-        <div class="airPollutionPage flex flex-col py-10 items-center justify-center min-h-[60vh] w-auto"
-                style="margin-top: 2rem;">
+        <div class="airPollutionPage flex flex-col py-10 items-center justify-center min-h-[60vh] w-auto">
                 <div class="airPollutionContent w-full max-w-md rounded-2xl shadow-2xl  transform transition-all hover:shadow-3xl"
-                    style="margin: 20px; padding: 24px;">
+                    style=" padding: 24px;">
                     <div class="flex items-center gap-3 text-xl font-semibold" style="margin-bottom:20px;">
                         <span class="flex items-center justify-center bg-blue-100 rounded-full"
                             style="padding:4px 8px;"><i class="ri-crosshair-2-fill text-blue-600"></i></span>
