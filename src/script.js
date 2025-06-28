@@ -196,7 +196,7 @@
                 // Update UI
                 document.getElementById('air-quality-level').textContent = aqiInfo.level;
                 document.getElementById('air-quality-level').className =`level font-bold text-lg rounded-2xl shadow-sm ${aqiInfo.textColor}`;
-                console.log(aqiInfo);
+                // console.log(aqiInfo);
                 document.getElementById('aqi-index').textContent = `AQI: ${Math.round(aqi)}`;
                 document.getElementById('aqi-progress').style.width = `${aqiInfo.width}%`;
                 document.getElementById('aqi-progress').className = `h-3 rounded-full transition-all duration-300 ${aqiInfo.textColor}`;
@@ -211,26 +211,51 @@
         
 
         // Search bar event listener
-        document.querySelector('#searchBtn svg').addEventListener('click', async () => {
-            const city = document.querySelector('#cityInput').value.trim();
-            if (!city) {
-                alert('Please enter a city name.');
-                return;
-            }
-            const coords = await getCoordinates(city);
-            if (coords) {
-                latitude = coords.latitude;
-                longitude = coords.longitude;
-                // Update API URLs
-                weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&hourly=temperature_2m,precipitation_probability,weathercode&forecast_days=7&timezone=${timezone}`;
-                airQualityUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${latitude}&longitude=${longitude}&hourly=pm10,pm2_5,nitrogen_dioxide,ozone,european_aqi&forecast_days=5&timezone=${timezone}`;
-                // Refresh data
-                updateCurrentWeather();
-                updateHourlyForecast();
-                updateWeeklyForecast();
-                updateAirPollution();
-            }
-        });
+
+        // Show/Hide Loader Helpers
+function showLoader() {
+    document.getElementById('loadingOverlay').classList.remove('hidden');
+}
+
+function hideLoader() {
+    document.getElementById('loadingOverlay').classList.add('hidden');
+}
+
+  document.querySelector('#searchBtn svg').addEventListener('click', async () => {
+    const city = document.querySelector('#cityInput').value.trim();
+    if (!city) {
+        alert('Please enter a city name.');
+        return;
+    }
+
+    showLoader(); // Show loader
+
+    const coords = await getCoordinates(city);
+    if (coords) {
+        latitude = coords.latitude;
+        longitude = coords.longitude;
+
+        // Update API URLs
+        weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&hourly=temperature_2m,precipitation_probability,weathercode&forecast_days=7&timezone=${timezone}`;
+        airQualityUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${latitude}&longitude=${longitude}&hourly=pm10,pm2_5,nitrogen_dioxide,ozone,european_aqi&forecast_days=5&timezone=${timezone}`;
+
+        try {
+            await Promise.all([
+                updateCurrentWeather(),
+                updateHourlyForecast(),
+                updateWeeklyForecast(),
+                updateAirPollution()
+            ]);
+        } catch (e) {
+            console.error(e);
+        } finally {
+            hideLoader(); // Always hide loader at end
+        }
+    } else {
+        hideLoader(); // Hide even if city fetch failed
+    }
+});
+
 
         // Initialize all updates
         window.onload = () => {

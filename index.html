@@ -12,6 +12,15 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 min-h-screen font-sans">
+    <div id="loadingOverlay" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-70 z-50 hidden">
+  <div class="loader">
+    <li class="ball"></li>
+    <li class="ball"></li>
+    <li class="ball"></li>
+  </div>
+</div>
+
+   
     <div id="welcome-page" class="welcomePage flex flex-col items-center justify-center h-screen">
         <div class="welcomeContent flex flex-col items-center justify-center w-full min-h-screen" data-aos="fade-up"
             data-aos-duration="1200">
